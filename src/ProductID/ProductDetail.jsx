@@ -32,7 +32,7 @@ export default function ProductDetail() {
           Back to products
         </Button>
       </Box>
-      <Box sx={{width: 400, height: 400,
+      <Box sx={{height: '30vh', width: '30vh', maxWidth: '400px', maxHeight: '400px',
           display: 'flex', alignItems: 'center',
           alignSelf: { xs: 'flex-start', md: 'auto' },
           justifyContent: 'center', p: 2}}>
