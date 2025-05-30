@@ -12,10 +12,8 @@ export default function App() {
     const saved = localStorage.getItem('cartItems');
     if (saved) {
       try {
-        // JSON.parse(saved) should be an array of [key, value]
         return new Map(JSON.parse(saved));
       } catch {
-        // if parse fails, start fresh
         return new Map();
       }
     }
