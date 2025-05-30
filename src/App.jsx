@@ -8,13 +8,28 @@ import theme from './theme';
 
 export default function App() {
   const [cartOpen, setCartOpen] = React.useState(false);
-  const [cartItems, setCartItems] = React.useState(new Map());
+  const [cartItems, setCartItems] = React.useState(() => {
+    const saved = localStorage.getItem('cartItems');
+    if (saved) {
+      try {
+        // JSON.parse(saved) should be an array of [key, value]
+        return new Map(JSON.parse(saved));
+      } catch {
+        // if parse fails, start fresh
+        return new Map();
+      }
+    }
+    return new Map();
+  });
   const cartCount = React.useMemo(
-    () => Array.from(cartItems.values()).reduce((sum, qty) => sum + qty, 0), [cartItems]
-  );  
+    () => Array.from(cartItems.values()).reduce((sum, qty) => sum + qty, 0), [cartItems]);  
   const toggleDrawer = () => setCartOpen(o => !o);
   const updateCartItems = prod => {
-    setCartItems(m => new Map(m).set(prod.id, (m.get(prod.id) || 0) + 1));
+    setCartItems(prev => {
+      const next = new Map(prev);
+      next.set(prod.id, (prev.get(prod.id) || 0) + 1);
+      return next;
+    });
   };
   const decCartItem = prodId => {
     setCartItems(prev => {
@@ -33,6 +48,11 @@ export default function App() {
       return next;
     })
   };
+
+  React.useEffect(() => {
+    const toStore = JSON.stringify(Array.from(cartItems.entries()));
+    localStorage.setItem('cartItems', toStore);
+  }, [cartItems]);
 
   return (
     <ThemeProvider theme={theme}>
