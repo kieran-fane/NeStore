@@ -2,7 +2,7 @@ import React from 'react';
 import { Badge, Box, AppBar, ThemeProvider, Toolbar, Typography, IconButton } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Context from './appContext';
-import CartDrawer from './CartDrawer';
+import CartDrawer from './Cart/CartDrawer';
 import { Outlet } from 'react-router-dom';
 import theme from './theme';
 
@@ -51,11 +51,9 @@ export default function App() {
               </IconButton>
             </Toolbar>
           </AppBar>
-
           <Box sx={{p: 10}}>
             <Outlet />
           </Box>
-
           <CartDrawer />
         </Box>
       </Context.Provider>

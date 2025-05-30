@@ -1,8 +1,8 @@
 import React from 'react';
 import { Drawer, Box, Typography, Button, Divider } from '@mui/material';
-import Context from './appContext';
-import CartItem from './common/CartItem';
-import { fetchProductsByID } from './api';
+import Context from '../appContext';
+import CartItem from './CartItem';
+import { fetchProductsByID } from '../api';
 
 export default function CartDrawer() {
   const ctx = React.useContext(Context);
@@ -17,10 +17,7 @@ export default function CartDrawer() {
 
   return (
     <Drawer open={ctx.cartOpen} onClose={ctx.toggleDrawer} anchor="right">
-      <Box
-        sx={{display: 'flex',
-          flexDirection: 'column',
-          height: '90vh'}}>
+      <Box sx={{display: 'flex', flexDirection: 'column', height: '90vh'}}>
         <Box sx={{ p: 2 }}>
           <Button onClick={ctx.toggleDrawer} sx={{ height: '50px', width: '50px' }}>{'>'}</Button>
         </Box>

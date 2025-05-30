@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Container, Grid, Typography } from '@mui/material';
-import ProductCard from './common/ProductCard';
-import FilterDropDown from './common/FilterDropDown';
-import { fetchProducts } from './api';
+import ProductCard from './ProductCard';
+import FilterDropDown from './FilterDropDown';
+import { fetchProducts } from '../api';
 
 export default function StoreGrid() {
   const [products, setProducts] = React.useState([]);

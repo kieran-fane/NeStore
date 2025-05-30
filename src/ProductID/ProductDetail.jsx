@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Box, Card, CardMedia, CardContent, Typography, Button } from '@mui/material';
-import Context from './appContext';
-import { fetchProductsByID } from './api';
+import Context from '../appContext';
+import { fetchProductsByID } from '../api';
 
 export default function ProductDetail() {
   const { id } = useParams();

@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.jsx';
-import StoreGrid from './StoreGrid.jsx';
-import ProductDetail from './ProductDetail.jsx';
+import StoreGrid from './Home/StoreGrid.jsx';
+import ProductDetail from './ProductID/ProductDetail.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -1,12 +1,25 @@
-# React + Vite
+# DigitalNEST Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Here is a frontend mock-up for an ecommerce store that utilizes a minimal api. This is to showcase my ability to create visually apealing, and well organized frontend applications. 
 
-Currently, two official plugins are available:
+To run locally use `npm install && npm run dev`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Structure
 
-## Expanding the ESLint configuration
+The file structure is as follows:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- /src
+    - App.jsx => the main way to get components to render through a MUI router.
+    - main.jsx => is where the app is rendered.
+    - theme.js => the struct that holds the React theme.
+    - appContext.js => initializes the context to be passed between components.
+    - /Cart
+        - CartDrawer.jsx => the Drawer that displays whats in the cart.
+        - CartItem.jsx => each item that should be displayed in the cart.
+        - CartItemInc.jsx => increase, decrease and delete a CartItem.
+    - /Home
+        - StoreGrid.jsx => lists all the products and allows for filtering.
+        - FilterDropDown.jsx => allows for filtering through the category of the product.
+        - ProductCard.jsx => displays a product on a card.
+    - /ProductID
+        - ProductDetail.jsx => Displays the page for a certain product.
